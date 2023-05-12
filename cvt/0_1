@@ -1,0 +1,6 @@
+#! /bin/bash
+
+    function 0_1(){
+        name=$(basename "$3" .md)
+        pandoc -f markdown -t tex $1 $2 -o $name.tex $3
+    }

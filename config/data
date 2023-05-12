@@ -1,0 +1,15 @@
+#! /bin/bash
+
+# array of preambles/headers
+    pb[0]=$pbdir/basic.sty
+    pb[1]=$pbdir/beamer.sty
+    pb[2]=$pbdir/minimal.sty
+    pb[3]=$pbdir/poem.sty
+
+# array of templates
+    tpl[0]=$tpldir/a.tex
+    tpl[1]=$tpldir/b.html
+
+# bib file
+    bib=$HOME/files/config/tex/refs/refs.bib
+

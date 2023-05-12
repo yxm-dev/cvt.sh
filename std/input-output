@@ -1,0 +1,207 @@
+#! /bin/bash
+
+# INPUTS
+## declaring
+    declare -a input_txt
+    declare -a input_img
+    declare -a input_aud
+    declare -a input_vid
+## text
+    input_txt[0]="-md"
+    input_txt[1]="-mmd"
+    input_txt[2]="-poem"
+    input_txt[3]="-tex"
+    input_txt[4]="-html"
+    input_txt[5]="-mdm"
+    input_txt[6]="-mdb"
+    input_txt[7]="-mdmb"
+    input_txt[8]="-htmlm"
+## image
+    input_img[0]="-jpeg"
+    input_img[1]="-png"
+    input_img[2]="-svg"
+## audio
+    input_aud[0]="-ogg"
+    input_aud[1]="-mp3"
+## video
+    input_vid[0]="-gif"
+    input_vid[1]="-mp4"
+
+# LONG INPUTS
+## declaring
+    declare -a input_long_txt
+    declare -a input_long_img
+    declare -a input_long_aud
+    declare -a input_long_vid
+## text
+    input_long_txt[0]="--markdown"
+    input_long_txt[1]="--minimal-markdown"
+    input_long_txt[2]="--poem"
+    input_long_txt[3]="--latex"
+    input_long_txt[4]="--html"
+    input_long_txt[5]="--markdown-math"
+    input_long_txt[6]="--markdown-bib"
+    input_long_txt[7]="--markdown-math-bib"
+    input_long_txt[8]="--html-math"
+## image
+    input_long_img[0]="--jpeg"
+    input_long_img[1]="--png"
+    input_long_img[2]="--svg"
+## audio
+    input_long_aud[0]="--ogg"
+    input_long_aud[1]="--mp3"
+## video
+    input_long_vid[0]="--gif"
+    input_long_vid[1]="--mp4"
+
+# ALTERNATIVE INPUTS
+## declaring
+    declare -a input_alt_txt
+    declare -a input_alt_img
+    declare -a input_alt_aud
+    declare -a input_alt_vid
+## text
+    input_alt_txt[0]="-markdown"
+    input_alt_txt[1]="-minimd"
+    input_alt_txt[2]="-poem"
+    input_alt_txt[3]="-latex"
+    input_alt_txt[4]="--html"
+    input_alt_txt[5]="-math"
+    input_alt_txt[6]="-bib"
+    input_alt_txt[7]="-math-bib"
+    input_alt_txt[8]="-html-math"
+## image
+    input_alt_img[0]="--jpeg"
+    input_alt_img[1]="--png"
+    input_alt_img[2]="--svg"
+## audio
+    input_alt_aud[0]="--ogg"
+    input_alt_aud[1]="--mp3"
+## video
+    input_alt_vid[0]="--gif"
+    input_alt_vid[1]="--mp4"
+
+# INVERSE INPUTS
+## declaring
+    declare -A inv_input_txt
+    declare -A inv_input_img
+    declare -A inv_input_aud
+    declare -A inv_input_vid
+## inverses
+    for i in ${!input_txt[@]}; do
+        inv_input_txt[${input_txt[$i]}]=$i
+        inv_input_txt[${input_long_txt[$i]}]=$i
+        inv_input_txt[${input_alt_txt[$i]}]=$i
+    done
+    for i in ${!input_img[@]}; do
+        inv_input_img[${input_img[$i]}]=$i
+        inv_input_img[${input_long_img[$i]}]=$i
+        inv_input_img[${input_alt_img[$i]}]=$i
+    done
+    for i in ${!input_aud[@]}; do
+        inv_input_aud[${input_aud[$i]}]=$i
+        inv_input_aud[${input_long_aud[$i]}]=$i
+        inv_input_aud[${input_alt_aud[$i]}]=$i
+
+    done
+    for i in ${!input_vid[@]}; do
+        inv_input_vid[${input_vid[$i]}]=$i
+        inv_input_vid[${input_long_vid[$i]}]=$i
+        inv_input_vid[${input_alt_vid[$i]}]=$i
+    done
+
+# OUTPUTS
+## declaring
+    declare -a output_txt
+    declare -a output_img
+    declare -a output_aud
+    declare -a output_vid
+
+## text
+    output_txt[0]="-pdf"
+    output_txt[1]="-tex"
+    output_txt[2]="-beamer"
+    output_txt[3]="-html"
+## image
+    output_img[0]="-jpeg"
+    output_img[1]="-png"
+    output_img[2]="-svg"
+## audio
+    output_aud[0]="-ogg"
+    output_aud[1]="-mp3"
+## video
+    output_vid[0]="-gif"
+    output_vid[1]="-mp4"
+
+# LONG OUTPUTS
+## declaring
+    declare -a output_long_txt
+    declare -a output_long_img
+    declare -a output_long_aud
+    declare -a output_long_vid
+## text
+    output_long_txt[0]="--pdf"
+    output_long_txt[1]="--latex"
+    output_long_txt[2]="--beamer"
+    output_long_txt[3]="--html"
+## image
+    output_long_img[0]="--jpeg"
+    output_long_img[1]="--png"
+    output_long_img[2]="--svg"
+## audio
+    output_long_aud[0]="--ogg"
+    output_long_aud[1]="--mp3"
+## video
+    output_long_vid[0]="--gif"
+    output_long_vid[1]="--mp4"
+
+# ALTERNATIVE OUTPUTS
+## declaring
+    declare -a output_alt_txt
+    declare -a output_alt_img
+    declare -a output_alt_aud
+    declare -a output_alt_vid
+## text
+    output_alt_txt[0]="--pdf"
+    output_alt_txt[1]="-latex"
+    output_alt_txt[2]="--beamer"
+    output_alt_txt[3]="--html"
+## image
+    output_alt_img[0]="--jpeg"
+    output_alt_img[1]="--png"
+    output_alt_img[2]="--svg"
+## audio
+    output_alt_aud[0]="--ogg"
+    output_alt_aud[1]="--mp3"
+## video
+    output_alt_vid[0]="--gif"
+    output_alt_vid[1]="--mp4"
+
+# INVERSE OUTPUTS
+## declaring
+    declare -A inv_output_txt
+    declare -A inv_output_img
+    declare -A inv_output_aud
+    declare -A inv_output_vid
+## inverses
+    for i in ${!output_txt[@]}; do
+        inv_output_txt[${output_txt[$i]}]=$i
+        inv_output_txt[${output_long_txt[$i]}]=$i
+        inv_output_txt[${output_alt_txt[$i]}]=$i
+    done
+    for i in ${!output_img[@]}; do
+        inv_output_img[${output_img[$i]}]=$i
+        inv_output_img[${output_long_img[$i]}]=$i
+        inv_output_img[${output_alt_img[$i]}]=$i
+    done
+    for i in ${!output_aud[@]}; do
+        inv_output_aud[${output_aud[$i]}]=$i
+        inv_output_aud[${output_long_aud[$i]}]=$i
+        inv_output_aud[${output_alt_aud[$i]}]=$i
+    done
+    for i in ${!output_vid[@]}; do
+        inv_output_vid[${output_vid[$i]}]=$i
+        inv_output_vid[${output_long_vid[$i]}]=$i
+        inv_output_vid[${output_alt_vid[$i]}]=$i
+    done
+

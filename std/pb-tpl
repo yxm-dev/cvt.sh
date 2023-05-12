@@ -1,0 +1,127 @@
+#! /bin/bash
+
+installdir=$HOME/.config/cvt.sh
+       
+# configured inputs and outputs
+#-------------------
+#   input | output
+# ------------------
+# 0 md    | pdf
+# 1 mmd   | tex 
+# 2 poem  | beamer
+# 3 tex   | html
+# 4 html  |
+# 5 mdm   | 
+# 6 mdb   | 
+# 7 mdmb  | 
+# 8 htmlm |
+
+# PREAMBLE/HEADERS
+## standard preables dir
+    pbdir_std=$installdir/std/pb
+## declaring
+    declare -A pb_std
+## standard preambles associative array    
+    pb_std[0,0]="-H $pbdir_std/basic.sty"
+    pb_std[0,1]="-H $pbdir_std/basic.sty"
+    pb_std[0,2]="-H $pbdir_std/beamer.sty"
+    pb_std[0,3]=""
+##---------------------
+    pb_std[1,0]="-H $pbdir_std/minimal.sty"
+    pb_std[1,1]="-H $pbdir_std/minimal.sty"
+    pb_std[1,2]="-H $pbdir_std/beamer_minimal.sty"
+    pb_std[1,3]=""
+##---------------------
+    pb_std[2,0]="-H $pbdir_std/poem.sty"
+    pb_std[2,1]="-H $pbdir_std/poem.sty"
+    pb_std[2,2]=""
+    pb_std[2,3]=""
+##---------------------
+    pb_std[3,0]="-H $pbdir_std/basic.sty"
+    pb_std[3,1]="-H $pbdir_std/basic.sty"
+    pb_std[3,2]="-H $pbdir_std/beamer.sty"
+    pb_std[3,3]=""
+##---------------------
+    pb_std[4,0]="-H $pbdir_std/basic.sty"
+    pb_std[4,1]="-H $pbdir_std/basic.sty"
+    pb_std[4,2]="-H $pbdir_std/beamer.sty"
+    pb_std[4,3]=""
+##---------------------
+    pb_std[5,0]="-H $pbdir_std/basic.sty"
+    pb_std[5,1]="-H $pbdir_std/basic.sty"
+    pb_std[5,2]="-H $pbdir_std/basic.sty"
+    pb_std[5,3]="-H $pbdir_std/basic.sty"
+##---------------------
+    pb_std[5,0]="-H $pbdir_std/basic.sty"
+    pb_std[5,1]="-H $pbdir_std/basic.sty"
+    pb_std[5,2]="-H $pbdir_std/beamer.sty"
+    pb_std[5,3]=""
+##---------------------
+    pb_std[6,0]="-H $pbdir_std/basic.sty"
+    pb_std[6,1]="-H $pbdir_std/basic.sty"
+    pb_std[6,2]="-H $pbdir_std/beamer.sty"
+    pb_std[6,3]=""
+##---------------------
+    pb_std[7,0]="-H $pbdir_std/basic.sty"
+    pb_std[7,1]="-H $pbdir_std/basic.sty"
+    pb_std[7,2]="-H $pbdir_std/beamer.sty"
+    pb_std[7,3]=""
+##---------------------
+    pb_std[8,0]="-H $pbdir_std/basic.sty"
+    pb_std[8,1]="-H $pbdir_std/basic.sty"
+    pb_std[8,2]="-H $pbdir_std/beamer.sty"
+    pb_std[8,3]=""
+
+# TEMPLATES
+## standard templates dir
+    tpldir_std=$installdir/tpl/std
+## declaring
+   declare -A tpl_std
+## standard templates associative array
+### empty string means using Pandoc's default template
+   tpl_std[0,0]=""
+    tpl_std[0,1]=""
+    tpl_std[0,2]=""
+    tpl_std[0,3]="--template $tpldir_std/basic.html"
+##--------------------
+    tpl_std[1,0]=""
+    tpl_std[1,1]=""
+    tpl_std[1,2]=""
+    tpl_std[1,3]="--template $tpldir_std/basic.html"
+##--------------------
+    tpl_std[2,0]=""
+    tpl_std[2,1]=""
+    tpl_std[2,2]=""
+    tpl_std[2,3]="--template $tpldir_std/beamer.html"
+##--------------------
+    tpl_std[3,0]=
+    tpl_std[3,1]=
+    tpl_std[3,2]=
+    tpl_std[3,3]="--template $tpldir_std/math.html"
+##--------------------
+    tpl_std[4,0]=""
+    tpl_std[4,1]=""
+    tpl_std[4,2]=""
+    tpl_std[4,3]=""
+##--------------------
+    tpl_std[5,0]=""
+    tpl_std[5,1]=""
+    tpl_std[5,2]=""
+    tpl_std[5,3]="--template $tpldir_std/math.html"
+##--------------------
+    tpl_std[6,0]=""
+    tpl_std[6,1]=""
+    tpl_std[6,2]=""
+    tpl_std[6,3]="--template $tpldir_std/math.html"
+##--------------------
+    tpl_std[7,0]=""
+    tpl_std[7,1]=""
+    tpl_std[7,2]=""
+    tpl_std[7,3]="--template $tpldir_std/math.html"
+##--------------------
+    tpl_std[8,0]=""
+    tpl_std[8,1]=""
+    tpl_std[8,2]=""
+    tpl_std[8,3]=""
+
+

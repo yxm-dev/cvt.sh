@@ -1,0 +1,46 @@
+% each item in a new frame
+%\beamerdefaultoverlayspecification{<+->}
+
+\renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
+
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+}
+
+\setbeamertemplate{itemize item}{\scriptsize\text{>}}
+\setbeamertemplate{itemize subitem}{\scriptsize\text{>}}
+\setbeamertemplate{itemize subsubitem}{\scriptsize\text{>}}
+
+%% define "topic" environment
+\newenvironment{topic}
+    {
+        \vspace{1cm}
+        \begin{center}
+        \begin{huge}
+    }
+    {
+    \end{huge}
+    \end{center}
+    }
+
+%% diagrams. 
+%%% automatically add ampersand replacement option.
+\usepackage{tikz-cd}
+    \tikzset{%
+        ampersand replacement=\&,
+        column sep=4em,
+        symbol/.style={%
+            draw=none,
+            every to/.append style={%
+                edge node={node [sloped, allow upside down, auto=false]{$#1$}}}
+                    }
+            }
+    \usetikzlibrary{babel}
+%%% calling quiver package
+\usepackage{$HOME/files/config/tex/quiver}
+
+
+
