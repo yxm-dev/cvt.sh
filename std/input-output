@@ -18,8 +18,9 @@
     input_txt[8]="-htmlm"
 ## image
     input_img[0]="-jpeg"
-    input_img[1]="-png"
-    input_img[2]="-svg"
+    input_img[1]="-jpg"
+    input_img[2]="-png"
+    input_img[3]="-svg"
 ## audio
     input_aud[0]="-ogg"
     input_aud[1]="-mp3"
@@ -45,8 +46,9 @@
     input_long_txt[8]="--html-math"
 ## image
     input_long_img[0]="--jpeg"
-    input_long_img[1]="--png"
-    input_long_img[2]="--svg"
+    input_long_img[1]="--jpg"
+    input_long_img[2]="--png"
+    input_long_img[3]="--svg"
 ## audio
     input_long_aud[0]="--ogg"
     input_long_aud[1]="--mp3"
@@ -72,8 +74,9 @@
     input_alt_txt[8]="-html-math"
 ## image
     input_alt_img[0]="--jpeg"
-    input_alt_img[1]="--png"
-    input_alt_img[2]="--svg"
+    input_alt_img[1]="--jpg"
+    input_alt_img[2]="--png"
+    input_alt_img[3]="--svg"
 ## audio
     input_alt_aud[0]="--ogg"
     input_alt_aud[1]="--mp3"
@@ -124,8 +127,9 @@
     output_txt[3]="-html"
 ## image
     output_img[0]="-jpeg"
-    output_img[1]="-png"
-    output_img[2]="-svg"
+    output_img[1]="-jpg"
+    output_img[2]="-png"
+    output_img[3]="-svg"
 ## audio
     output_aud[0]="-ogg"
     output_aud[1]="-mp3"
@@ -146,8 +150,9 @@
     output_long_txt[3]="--html"
 ## image
     output_long_img[0]="--jpeg"
-    output_long_img[1]="--png"
-    output_long_img[2]="--svg"
+    output_long_img[1]="--jpg"
+    output_long_img[2]="--png"
+    output_long_img[3]="--svg"
 ## audio
     output_long_aud[0]="--ogg"
     output_long_aud[1]="--mp3"
@@ -168,8 +173,9 @@
     output_alt_txt[3]="--html"
 ## image
     output_alt_img[0]="--jpeg"
-    output_alt_img[1]="--png"
-    output_alt_img[2]="--svg"
+    output_alt_img[1]="--jpg"
+    output_alt_img[2]="--png"
+    output_alt_img[3]="--svg"
 ## audio
     output_alt_aud[0]="--ogg"
     output_alt_aud[1]="--mp3"

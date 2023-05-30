@@ -1,6 +1,6 @@
 #! /bin/bash
 
-    function 0_2(){
+    function txt_0_2(){
         name=$(basename "$3" .md)
         pandoc -f markdown -t beamer --pdf-engine=xelatex -V colorlinks=true $1 $2 -o $name.pdf $3
     }
