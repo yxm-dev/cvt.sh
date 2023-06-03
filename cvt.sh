@@ -11,42 +11,44 @@
     done
     source $installdir/config/data
 
-
 # FUNCTION "CVT"
-    function cvt(){  
-## defining auxiliary functions
-    function cvt_txt(){
-         var0="${1##*.}"
-         echo $var0
-         for i in ${!input_txt[@]}; do
-            var1="${input_txt[$i]}"
-            var2="${var1//-/}"
-            echo $var2
-            if [[ "${var0}" == "${var2}" ]]; then
-                var="${var1}"
-                echo ${var}
-            fi
-         done
-         if [[ -z $var ]]; then
-             echo "Extension .${var0} not recognized."
-         fi
-
-        input=${inv_input_txt[$var]}
-        output=${inv_output_txt[$2]}
-
-        if [[ "${pb[@]}" =~ "$3" ]] && [[ "${tpl[@]}" =~ "$4" ]]; then
-                txt_${input}_${output} $3 $4 $5
-        elif  [[ "${pb[@]}" =~ "$3" ]] && [[ ! "${tpl[@]}" =~  "$4" ]]; then
-                txt_${input}_${output} $3 ${tpl_std[${input},${output}]} $4
-        elif [[ "$3" =~ "${tpl[@]}" ]]; then
-                txt_${input}_${output} ${pb_std[${input},${output}]} $3
-        elif [[ ! "${pb[@]}" =~ "$3" ]] && [[ ! "${tpl[@]}" =~ "$3" ]] && [[ -z "$4" ]]; then
-                txt_${input}_${output} ${pb_std[${input},${output}]} ${tpl_std[${input},${output}]} $3
+    function cvt(){
+## Extension Variables
+    var_1=${1##*.}
+    var_1=${var_1//-/}
+    var_2=${2//-/}
+## Auxiliary Functions
+### text
+    function cvt_txt_kernel(){
+        if [[ "${pb[@]}" =~ "$1" ]] && [[ "${tpl[@]}" =~ "$2" ]]; then
+                txt_${input}_${output} $1 $2 $3
+        elif  [[ "${pb[@]}" =~ "$1" ]] && [[ ! "${tpl[@]}" =~  "$2" ]]; then
+                txt_${input}_${output} $1 ${tpl_std[${input},${output}]} $2
+        elif [[ "$1" =~ "${tpl[@]}" ]]; then
+                txt_${input}_${output} ${pb_std[${input},${output}]} $1
+        elif [[ ! "${pb[@]}" =~ "$1" ]] && [[ ! "${tpl[@]}" =~ "$1" ]] && [[ -z "$2" ]]; then
+                txt_${input}_${output} ${pb_std[${input},${output}]} ${tpl_std[${input},${output}]} $1
         else
                 printf "\nError in the syntax or not defined preamble/header.\nTry \"cvt --help.\"\n"
-            fi
+        fi
     }
-
+    function cvt_txt(){
+        input=${inv_input_txt[$1]}
+        output=${inv_output_txt[$2]}
+        cvt_txt_kernel $3 $4 $5
+    }
+    function cvt_txt_2(){
+        for i in ${!input_txt[@]}; do
+            if [[ "${TXT[$i]}" == "$var_1" ]]; then
+                input=$i
+                var="Ok"
+            fi
+        done
+        output=${inv_output_txt[$1]}
+        cvt_txt_kernel $2 $3 $4
+    }
+    
+### image
     function cvt_img(){
         input_id=${inv_input_img[$1]}
         output_id=${inv_output_img[$2]}
@@ -54,6 +56,7 @@
         mv "$3" $underscore
         img_${input_id}_${output_id} "$underscore"
     }
+### audio
     function cvt_aud(){
         input_id=${inv_input_aud[$1]}
         output_id=${inv_output_aud[$2]}
@@ -61,6 +64,7 @@
         mv "$3" $underscore
         aud_${input_id}_${output_id} "$underscore"
     }
+### video
     function cvt_vid(){
         input_id=${inv_input_vid[$1]}
         output_id=${inv_output_vid[$2]}
@@ -68,36 +72,37 @@
         mv "$3" $underscore
         vid_${input_id}_${output_id} "$underscore"
     }
-## Function CVT properly
-### text to text 
-        if  [[ "${input_txt[@]}" =~ "$1" ]] || 
-            [[ "${input_long_txt[@]}" =~ "$1" ]] || 
-            [[ "${input_alt_txt[@]}" =~ "$1" ]] && 
-            [[ "${output_txt[@]}" =~ "$2" ]] || 
-            [[ "${output_long_txt[@]}" =~ "$2" ]] || 
-            [[ "${output_alt_txt[@]}" =~ "$2" ]]; then
-            cvt_txt $1 $2 $3 $4 $5
 
-        elif [[ -n $ok_txt ]] &&
-             [[ "${output_txt[@]}" =~ "$2" ]] ||
-             [[ "${output_long_txt[@]}" =~ "$2" ]] ||
-             [[ "${output_alt_txt[@]}" =~ "$2" ]]; then
-             cvt_txt $1 $2 $1 $3 $4
+## Function "CVT" Properly
+### text to text 
+        if ([[ "${input_txt[@]}" =~ "$1" ]] || 
+            [[ "${input_long_txt[@]}" =~ "$1" ]] || 
+            [[ "${input_alt_txt[@]}" =~ "$1" ]]) && 
+           ([[ "${output_txt[@]}" =~ "$2" ]] || 
+            [[ "${output_long_txt[@]}" =~ "$2" ]] || 
+            [[ "${output_alt_txt[@]}" =~ "$2" ]]); then
+            cvt_txt $1 $2 $3 $4 $5 
+
+        elif  [[ -z $var ]] &&
+             ([[ "${output_txt[@]}" =~ "$2" ]] ||
+              [[ "${output_long_txt[@]}" =~ "$2" ]] ||
+              [[ "${output_alt_txt[@]}" =~ "$2" ]]); then
+               cvt_txt_2 $2 $1 $3 $4
 
 ### image to image
-        elif [[ "${input_img[@]}" =~ "$1" ]] || 
-             [[ "${input_long_img[@]}" =~ "$1" ]] || 
-             [[ "${input_alt_img[@]}" =~ "$1" ]] && 
-             [[ "${output_img[@]}" =~ "$2" ]] || 
-             [[ "${output_long_img[@]}" =~ "$2" ]] || 
-             [[ "${output_alt_img[@]}" =~ "$2" ]]; then
+        elif ([[ "${input_img[@]}" =~ "$1" ]] || 
+              [[ "${input_long_img[@]}" =~ "$1" ]] || 
+              [[ "${input_alt_img[@]}" =~ "$1" ]]) && 
+              [[ "${output_img[@]}" =~ "$2" ]] || 
+              [[ "${output_long_img[@]}" =~ "$2" ]] || 
+              [[ "${output_alt_img[@]}" =~ "$2" ]]; then
              cvt_img $1 $2 $3 
 
-        elif [[ -n $ok_img ]] &&
-             [[ "${output_img[@]}" =~ "$2" ]] ||
-             [[ "${output_long_img[@]}" =~ "$2" ]] ||
-             [[ "${output_alt_img[@]}" =~ "$2" ]]; then
-             cvt_img $ext_img $2 $1
+        # elif [[ -n $ok_img ]] &&
+        #      [[ "${output_img[@]}" =~ "$2" ]] ||
+        #      [[ "${output_long_img[@]}" =~ "$2" ]] ||
+        #      [[ "${output_alt_img[@]}" =~ "$2" ]]; then
+        #      cvt_img $ext_img $2 $1
 
 ### audio to audio
          elif [[ "${input_aud[@]}" =~ "$1" ]] || 

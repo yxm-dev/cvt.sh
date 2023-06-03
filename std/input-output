@@ -84,6 +84,29 @@
     input_alt_vid[0]="--gif"
     input_alt_vid[1]="--mp4"
 
+# SHORT INPUTS
+## declaring
+    declare -a TXT
+    declare -a IMG
+    declare -a AUD
+    declare -a VID
+## text
+    for i in ${!input_txt[@]}; do
+            TXT[$i]=${input_txt[$i]//-/}
+    done
+## image
+    for i in ${!input_img[@]}; do
+            IMG[$i]=${input_img[$i]//-/}
+    done
+## audio
+    for i in ${!input_aud[@]}; do
+            AUD[$i]=${input_aud[$i]//-/}
+    done
+## video
+    for i in ${!input_vid[@]}; do
+            VID[$i]=${input_vid[$i]//-/}
+    done
+
 # INVERSE INPUTS
 ## declaring
     declare -A inv_input_txt
