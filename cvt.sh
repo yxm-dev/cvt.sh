@@ -1,6 +1,6 @@
-    installdir=$HOME/.config/cvt.sh
-    cvt_files=$(find $installdir/cvt/ -type f \( ! -iname "README.txt" \)) 
-    std_files=$(find $installdir/std/ -maxdepth 1 -type f)
+    install_dir=$HOME/.config/cvt.sh
+    cvt_files=$(find $install_dir/cvt/ -type f \( ! -iname "README.txt" \)) 
+    std_files=$(find $install_dir/std/ -maxdepth 1 -type f)
 
 # including files
     for f in ${cvt_files[@]}; do
@@ -9,7 +9,7 @@
     for f in ${std_files[@]}; do
         source $f
     done
-    source $installdir/config/data
+    source $install_dir/config/data
 
 # FUNCTION "CVT"
     function cvt(){
