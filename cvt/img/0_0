@@ -1,5 +1,5 @@
 #! /bin/bash 
 
-    function img_0_0(){
+    function CVT_img_0_0(){
         echo "There is nothing to do."
     }

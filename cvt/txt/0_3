@@ -1,6 +1,6 @@
 #! /bin/bash
 
-    function txt_0_3(){
-        name=$(basename "$3" .md)
-        pandoc -f markdown -t html $1 $2 -o $name.html $3
+    function CVT_txt_0_3(){
+        name=${1%.*}
+        pandoc -f markdown -t html $2 $3 -o $name.html $1
     }

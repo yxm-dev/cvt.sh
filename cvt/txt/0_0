@@ -1,8 +1,8 @@
 #! /bin/bash
 
-    function txt_0_0(){
-        name=$(basename "$3" .md)
-        pandoc --number-section --toc -f markdown -t pdf -V colorlinks=true $1 $2 -o $name.pdf $3
+    function CVT_txt_0_0(){
+        name=${1%.*}
+        pandoc --number-section --toc -f markdown -t pdf -V colorlinks=true $2 $3 -o $name.pdf $1
     }
 
 

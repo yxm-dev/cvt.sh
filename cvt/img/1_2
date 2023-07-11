@@ -1,6 +1,6 @@
 #! /bin/bash 
 
-    function img_1_2(){
+    function CVT_img_1_2(){
         name=$(basename $1)
         convert $1 $name.png
         rm $1

@@ -1,6 +1,6 @@
 #! /bin/bash
 
-installdir=$HOME/.config/cvt.sh
+CVT_install_dir=$HOME/.config/cvt.sh
        
 # configured inputs and outputs
 #-------------------
@@ -10,118 +10,144 @@ installdir=$HOME/.config/cvt.sh
 # 1 mmd   | tex 
 # 2 poem  | beamer
 # 3 tex   | html
-# 4 html  |
+# 4 html  | docx
 # 5 mdm   | 
 # 6 mdb   | 
 # 7 mdmb  | 
 # 8 htmlm |
+# 9 docx
 
 # PREAMBLE/HEADERS
 ## standard preables dir
-    pbdir_std=$installdir/std/pb
+    CVT_pb_dir=$CVT_install_dir/std/pb
 ## declaring
-    declare -A pb_std
+    declare -A CVT_pb_std
 ## standard preambles associative array    
-    pb_std[0,0]="-H $pbdir_std/basic.sty"
-    pb_std[0,1]="-H $pbdir_std/basic.sty"
-    pb_std[0,2]="-H $pbdir_std/beamer.sty"
-    pb_std[0,3]=""
+    CVT_pb_std[0,0]="-H $CVT_pb_dir/basic.sty"
+    CVT_pb_std[0,1]="-H $CVT_pb_dir/basic.sty"
+    CVT_pb_std[0,2]="-H $CVT_pb_dir/beamer.sty"
+    CVT_pb_std[0,3]=""
+    CVT_pb_std[0,4]=""
+
 ##---------------------
-    pb_std[1,0]="-H $pbdir_std/minimal.sty"
-    pb_std[1,1]="-H $pbdir_std/minimal.sty"
-    pb_std[1,2]="-H $pbdir_std/beamer_minimal.sty"
-    pb_std[1,3]=""
+    CVT_pb_std[1,0]="-H $CVT_pb_dir/minimal.sty"
+    CVT_pb_std[1,1]="-H $CVT_pb_dir/minimal.sty"
+    CVT_pb_std[1,2]="-H $CVT_pb_dir/beamer_minimal.sty"
+    CVT_pb_std[1,3]=""
+    CVT_pb_std[1,4]=""
 ##---------------------
-    pb_std[2,0]="-H $pbdir_std/poem.sty"
-    pb_std[2,1]="-H $pbdir_std/poem.sty"
-    pb_std[2,2]=""
-    pb_std[2,3]=""
+    CVT_pb_std[2,0]="-H $CVT_pb_dir/poem.sty"
+    CVT_pb_std[2,1]="-H $CVT_pb_dir/poem.sty"
+    CVT_pb_std[2,2]=""
+    CVT_pb_std[2,3]=""
+    CVT_pb_std[2,4]=""
 ##---------------------
-    pb_std[3,0]="-H $pbdir_std/basic.sty"
-    pb_std[3,1]="-H $pbdir_std/basic.sty"
-    pb_std[3,2]="-H $pbdir_std/beamer.sty"
-    pb_std[3,3]=""
+    CVT_pb_std[3,0]="-H $CVT_pb_dir/basic.sty"
+    CVT_pb_std[3,1]="-H $CVT_pb_dir/basic.sty"
+    CVT_pb_std[3,2]="-H $CVT_pb_dir/beamer.sty"
+    CVT_pb_std[3,3]=""
+    CVT_pb_std[3,4]=""
 ##---------------------
-    pb_std[4,0]="-H $pbdir_std/basic.sty"
-    pb_std[4,1]="-H $pbdir_std/basic.sty"
-    pb_std[4,2]="-H $pbdir_std/beamer.sty"
-    pb_std[4,3]=""
+    CVT_pb_std[4,0]="-H $CVT_pb_dir/basic.sty"
+    CVT_pb_std[4,1]="-H $CVT_pb_dir/basic.sty"
+    CVT_pb_std[4,2]="-H $CVT_pb_dir/beamer.sty"
+    CVT_pb_std[4,3]=""
+    CVT_pb_std[4,4]=""
 ##---------------------
-    pb_std[5,0]="-H $pbdir_std/basic.sty"
-    pb_std[5,1]="-H $pbdir_std/basic.sty"
-    pb_std[5,2]="-H $pbdir_std/basic.sty"
-    pb_std[5,3]="-H $pbdir_std/basic.sty"
+    CVT_pb_std[5,0]="-H $CVT_pb_dir/basic.sty"
+    CVT_pb_std[5,1]="-H $CVT_pb_dir/basic.sty"
+    CVT_pb_std[5,2]="-H $CVT_pb_dir/beamer.sty"
+    CVT_pb_std[5,3]=""
+    CVT_pb_std[5,4]=""
 ##---------------------
-    pb_std[5,0]="-H $pbdir_std/basic.sty"
-    pb_std[5,1]="-H $pbdir_std/basic.sty"
-    pb_std[5,2]="-H $pbdir_std/beamer.sty"
-    pb_std[5,3]=""
+    CVT_pb_std[6,0]="-H $CVT_pb_dir/basic.sty"
+    CVT_pb_std[6,1]="-H $CVT_pb_dir/basic.sty"
+    CVT_pb_std[6,2]="-H $CVT_pb_dir/beamer.sty"
+    CVT_pb_std[6,3]=""
+    CVT_pb_std[6,4]=""
 ##---------------------
-    pb_std[6,0]="-H $pbdir_std/basic.sty"
-    pb_std[6,1]="-H $pbdir_std/basic.sty"
-    pb_std[6,2]="-H $pbdir_std/beamer.sty"
-    pb_std[6,3]=""
+    CVT_pb_std[7,0]="-H $CVT_pb_dir/basic.sty"
+    CVT_pb_std[7,1]="-H $CVT_pb_dir/basic.sty"
+    CVT_pb_std[7,2]="-H $CVT_pb_dir/beamer.sty"
+    CVT_pb_std[7,3]=""
+    CVT_pb_std[7,4]=""
 ##---------------------
-    pb_std[7,0]="-H $pbdir_std/basic.sty"
-    pb_std[7,1]="-H $pbdir_std/basic.sty"
-    pb_std[7,2]="-H $pbdir_std/beamer.sty"
-    pb_std[7,3]=""
+    CVT_pb_std[8,0]="-H $CVT_pb_dir/basic.sty"
+    CVT_pb_std[8,1]="-H $CVT_pb_dir/basic.sty"
+    CVT_pb_std[8,2]="-H $CVT_pb_dir/beamer.sty"
+    CVT_pb_std[8,3]=""
+    CVT_pb_std[8,4]=""
 ##---------------------
-    pb_std[8,0]="-H $pbdir_std/basic.sty"
-    pb_std[8,1]="-H $pbdir_std/basic.sty"
-    pb_std[8,2]="-H $pbdir_std/beamer.sty"
-    pb_std[8,3]=""
+    CVT_pb_std[9,0]="-H $CVT_pb_dir/basic.sty"
+    CVT_pb_std[9,1]="-H $CVT_pb_dir/basic.sty"
+    CVT_pb_std[9,2]="-H $CVT_pb_dir/beamer.sty"
+    CVT_pb_std[9,3]=""
+    CVT_pb_std[9,4]=""
 
 # TEMPLATES
 ## standard templates dir
-    tpldir_std=$installdir/tpl/std
+    CVT_tpl_dir=$CVT_install_dir/tpl/std
 ## declaring
-   declare -A tpl_std
+   declare -A CVT_tpl_std
 ## standard templates associative array
 ### empty string means using Pandoc's default template
-   tpl_std[0,0]=""
-    tpl_std[0,1]=""
-    tpl_std[0,2]=""
-    tpl_std[0,3]="--template $tpldir_std/basic.html"
+    CVT_tpl_std[0,0]=""
+    CVT_tpl_std[0,1]=""
+    CVT_tpl_std[0,2]=""
+    CVT_tpl_std[0,3]="--template $CVT_tpl_dir/basic.html"
+    CVT_tpl_std[0,4]=""
 ##--------------------
-    tpl_std[1,0]=""
-    tpl_std[1,1]=""
-    tpl_std[1,2]=""
-    tpl_std[1,3]="--template $tpldir_std/basic.html"
+    CVT_tpl_std[1,0]=""
+    CVT_tpl_std[1,1]=""
+    CVT_tpl_std[1,2]=""
+    CVT_tpl_std[1,3]="--template $CVT_tpl_dir/basic.html"
+    CVT_tpl_std[1,4]=""
 ##--------------------
-    tpl_std[2,0]=""
-    tpl_std[2,1]=""
-    tpl_std[2,2]=""
-    tpl_std[2,3]="--template $tpldir_std/beamer.html"
+    CVT_tpl_std[2,0]=""
+    CVT_tpl_std[2,1]=""
+    CVT_tpl_std[2,2]=""
+    CVT_tpl_std[2,3]="--template $CVT_tpl_dir/beamer.html"
+    CVT_tpl_std[2,4]=""
 ##--------------------
-    tpl_std[3,0]=
-    tpl_std[3,1]=
-    tpl_std[3,2]=
-    tpl_std[3,3]="--template $tpldir_std/math.html"
+    CVT_tpl_std[3,0]=
+    CVT_tpl_std[3,1]=
+    CVT_tpl_std[3,2]=
+    CVT_tpl_std[3,3]="--template $CVT_tpl_dir/math.html"
+    CVT_tpl_std[3,4]=""
 ##--------------------
-    tpl_std[4,0]=""
-    tpl_std[4,1]=""
-    tpl_std[4,2]=""
-    tpl_std[4,3]=""
+    CVT_tpl_std[4,0]=""
+    CVT_tpl_std[4,1]=""
+    CVT_tpl_std[4,2]=""
+    CVT_tpl_std[4,3]=""
+    CVT_tpl_std[4,4]=""
 ##--------------------
-    tpl_std[5,0]=""
-    tpl_std[5,1]=""
-    tpl_std[5,2]=""
-    tpl_std[5,3]="--template $tpldir_std/math.html"
+    CVT_tpl_std[5,0]=""
+    CVT_tpl_std[5,1]=""
+    CVT_tpl_std[5,2]=""
+    CVT_tpl_std[5,3]="--template $CVT_tpl_dir/math.html"
+    CVT_tpl_std[5,4]=""
 ##--------------------
-    tpl_std[6,0]=""
-    tpl_std[6,1]=""
-    tpl_std[6,2]=""
-    tpl_std[6,3]="--template $tpldir_std/math.html"
+    CVT_tpl_std[6,0]=""
+    CVT_tpl_std[6,1]=""
+    CVT_tpl_std[6,2]=""
+    CVT_tpl_std[6,3]="--template $CVT_tpl_dir/math.html"
+    CVT_tpl_std[6,4]=""
 ##--------------------
-    tpl_std[7,0]=""
-    tpl_std[7,1]=""
-    tpl_std[7,2]=""
-    tpl_std[7,3]="--template $tpldir_std/math.html"
+    CVT_tpl_std[7,0]=""
+    CVT_tpl_std[7,1]=""
+    CVT_tpl_std[7,2]=""
+    CVT_tpl_std[7,3]="--template $CVT_tpl_dir/math.html"
+    CVT_tpl_std[7,4]=""
 ##--------------------
-    tpl_std[8,0]=""
-    tpl_std[8,1]=""
-    tpl_std[8,2]=""
-    tpl_std[8,3]=""
-
+    CVT_tpl_std[8,0]=""
+    CVT_tpl_std[8,1]=""
+    CVT_tpl_std[8,2]=""
+    CVT_tpl_std[8,3]=""
+    CVT_tpl_std[8,4]=""
+##--------------------
+    CVT_tpl_std[9,0]=""
+    CVT_tpl_std[9,1]=""
+    CVT_tpl_std[9,2]=""
+    CVT_tpl_std[9,3]=""
+    CVT_tpl_std[9,4]=""
 

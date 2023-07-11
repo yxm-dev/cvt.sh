@@ -2,235 +2,263 @@
 
 # INPUTS
 ## declaring
-    declare -a input_txt
-    declare -a input_img
-    declare -a input_aud
-    declare -a input_vid
+    declare -a CVT_input_txt
+    declare -a CVT_input_img
+    declare -a CVT_input_aud
+    declare -a CVT_input_vid
 ## text
-    input_txt[0]="-md"
-    input_txt[1]="-mmd"
-    input_txt[2]="-poem"
-    input_txt[3]="-tex"
-    input_txt[4]="-html"
-    input_txt[5]="-mdm"
-    input_txt[6]="-mdb"
-    input_txt[7]="-mdmb"
-    input_txt[8]="-htmlm"
+    CVT_input_txt[0]="-md"
+    CVT_input_txt[1]="-mmd"
+    CVT_input_txt[2]="-poem"
+    CVT_input_txt[3]="-tex"
+    CVT_input_txt[4]="-html"
+    CVT_input_txt[5]="-mdm"
+    CVT_input_txt[6]="-mdb"
+    CVT_input_txt[7]="-mdmb"
+    CVT_input_txt[8]="-htmlm"
+    CVT_input_txt[9]="-docx"
 ## image
-    input_img[0]="-jpeg"
-    input_img[1]="-jpg"
-    input_img[2]="-png"
-    input_img[3]="-svg"
+    CVT_input_img[0]="-jpeg"
+    CVT_input_img[1]="-jpg"
+    CVT_input_img[2]="-png"
+    CVT_input_img[3]="-svg"
 ## audio
-    input_aud[0]="-ogg"
-    input_aud[1]="-mp3"
+    CVT_input_aud[0]="-ogg"
+    CVT_input_aud[1]="-mp3"
 ## video
-    input_vid[0]="-gif"
-    input_vid[1]="-mp4"
+    CVT_input_vid[0]="-gif"
+    CVT_input_vid[1]="-mp4"
 
 # LONG INPUTS
 ## declaring
-    declare -a input_long_txt
-    declare -a input_long_img
-    declare -a input_long_aud
-    declare -a input_long_vid
+    declare -a CVT_input_long_txt
+    declare -a CVT_input_long_img
+    declare -a CVT_input_long_aud
+    declare -a CVT_input_long_vid
 ## text
-    input_long_txt[0]="--markdown"
-    input_long_txt[1]="--minimal-markdown"
-    input_long_txt[2]="--poem"
-    input_long_txt[3]="--latex"
-    input_long_txt[4]="--html"
-    input_long_txt[5]="--markdown-math"
-    input_long_txt[6]="--markdown-bib"
-    input_long_txt[7]="--markdown-math-bib"
-    input_long_txt[8]="--html-math"
+    CVT_input_long_txt[0]="--markdown"
+    CVT_input_long_txt[1]="--minimal-markdown"
+    CVT_input_long_txt[2]="--poem"
+    CVT_input_long_txt[3]="--latex"
+    CVT_input_long_txt[4]="--html"
+    CVT_input_long_txt[5]="--markdown-math"
+    CVT_input_long_txt[6]="--markdown-bib"
+    CVT_input_long_txt[7]="--markdown-math-bib"
+    CVT_input_long_txt[8]="--html-math"
+    CVT_input_long_txt[9]="--docx"
+
 ## image
-    input_long_img[0]="--jpeg"
-    input_long_img[1]="--jpg"
-    input_long_img[2]="--png"
-    input_long_img[3]="--svg"
+    CVT_input_long_img[0]="--jpeg"
+    CVT_input_long_img[1]="--jpg"
+    CVT_input_long_img[2]="--png"
+    CVT_input_long_img[3]="--svg"
 ## audio
-    input_long_aud[0]="--ogg"
-    input_long_aud[1]="--mp3"
+    CVT_input_long_aud[0]="--ogg"
+    CVT_input_long_aud[1]="--mp3"
 ## video
-    input_long_vid[0]="--gif"
-    input_long_vid[1]="--mp4"
+    CVT_input_long_vid[0]="--gif"
+    CVT_input_long_vid[1]="--mp4"
 
 # ALTERNATIVE INPUTS
 ## declaring
-    declare -a input_alt_txt
-    declare -a input_alt_img
-    declare -a input_alt_aud
-    declare -a input_alt_vid
+    declare -a CVT_input_alt_txt
+    declare -a CVT_input_alt_img
+    declare -a CVT_input_alt_aud
+    declare -a CVT_input_alt_vid
 ## text
-    input_alt_txt[0]="-markdown"
-    input_alt_txt[1]="-minimd"
-    input_alt_txt[2]="-poem"
-    input_alt_txt[3]="-latex"
-    input_alt_txt[4]="--html"
-    input_alt_txt[5]="-math"
-    input_alt_txt[6]="-bib"
-    input_alt_txt[7]="-math-bib"
-    input_alt_txt[8]="-html-math"
+    CVT_input_alt_txt[0]="-markdown"
+    CVT_input_alt_txt[1]="-minimd"
+    CVT_input_alt_txt[2]="-poem"
+    CVT_input_alt_txt[3]="-latex"
+    CVT_input_alt_txt[4]="--html"
+    CVT_input_alt_txt[5]="-math"
+    CVT_input_alt_txt[6]="-bib"
+    CVT_input_alt_txt[7]="-math-bib"
+    CVT_input_alt_txt[8]="-html-math"
+    CVT_input_alt_txt[9]="-docx"
 ## image
-    input_alt_img[0]="--jpeg"
-    input_alt_img[1]="--jpg"
-    input_alt_img[2]="--png"
-    input_alt_img[3]="--svg"
+    CVT_input_alt_img[0]="--jpeg"
+    CVT_input_alt_img[1]="--jpg"
+    CVT_input_alt_img[2]="--png"
+    CVT_input_alt_img[3]="--svg"
 ## audio
-    input_alt_aud[0]="--ogg"
-    input_alt_aud[1]="--mp3"
+    CVT_input_alt_aud[0]="--ogg"
+    CVT_input_alt_aud[1]="--mp3"
 ## video
-    input_alt_vid[0]="--gif"
-    input_alt_vid[1]="--mp4"
+    CVT_input_alt_vid[0]="--gif"
+    CVT_input_alt_vid[1]="--mp4"
 
 # SHORT INPUTS
 ## declaring
-    declare -a TXT
-    declare -a IMG
-    declare -a AUD
-    declare -a VID
+    declare -a CVT_TXT
+    declare -a CVT_IMG
+    declare -a CVT_AUD
+    declare -a CVT_VID
 ## text
-    for i in ${!input_txt[@]}; do
-            TXT[$i]=${input_txt[$i]//-/}
+    for i in ${!CVT_input_txt[@]}; do
+            CVT_TXT[$i]=${CVT_input_txt[$i]//-/}
     done
 ## image
-    for i in ${!input_img[@]}; do
-            IMG[$i]=${input_img[$i]//-/}
+    for i in ${!CVT_input_img[@]}; do
+            CVT_IMG[$i]=${CVT_input_img[$i]//-/}
     done
 ## audio
-    for i in ${!input_aud[@]}; do
-            AUD[$i]=${input_aud[$i]//-/}
+    for i in ${!CVT_input_aud[@]}; do
+            CVT_AUD[$i]=${CVT_input_aud[$i]//-/}
     done
 ## video
-    for i in ${!input_vid[@]}; do
-            VID[$i]=${input_vid[$i]//-/}
+    for i in ${!CVT_input_vid[@]}; do
+            CVT_VID[$i]=${CVT_input_vid[$i]//-/}
     done
 
 # INVERSE INPUTS
-## declaring
-    declare -A inv_input_txt
-    declare -A inv_input_img
-    declare -A inv_input_aud
-    declare -A inv_input_vid
-## inverses
-    for i in ${!input_txt[@]}; do
-        inv_input_txt[${input_txt[$i]}]=$i
-        inv_input_txt[${input_long_txt[$i]}]=$i
-        inv_input_txt[${input_alt_txt[$i]}]=$i
-    done
-    for i in ${!input_img[@]}; do
-        inv_input_img[${input_img[$i]}]=$i
-        inv_input_img[${input_long_img[$i]}]=$i
-        inv_input_img[${input_alt_img[$i]}]=$i
-    done
-    for i in ${!input_aud[@]}; do
-        inv_input_aud[${input_aud[$i]}]=$i
-        inv_input_aud[${input_long_aud[$i]}]=$i
-        inv_input_aud[${input_alt_aud[$i]}]=$i
-
-    done
-    for i in ${!input_vid[@]}; do
-        inv_input_vid[${input_vid[$i]}]=$i
-        inv_input_vid[${input_long_vid[$i]}]=$i
-        inv_input_vid[${input_alt_vid[$i]}]=$i
-    done
-
+    function CVT_inv_input_txt(){
+        for i in "${!CVT_input_txt[@]}"; do
+            if [[ "$1" == "${CVT_input_txt[$i]}" ]] ||
+               [[ "$1" == "${CVT_input_long_txt[$i]}" ]] ||
+               [[ "$1" == "${CVT_input_alt_txt[$i]}" ]]; then
+            echo $i
+            fi
+        done
+    }
+    function CVT_inv_input_img(){
+        for i in "${!CVT_input_img[@]}"; do
+            if [[ "$1" == "${CVT_input_img[$i]}" ]] ||
+               [[ "$1" == "${CVT_input_long_img[$i]}" ]] ||
+               [[ "$1" == "${CVT_input_alt_img[$i]}" ]]; then
+            echo $i
+            fi
+        done
+    }
+    function CVT_inv_input_aud(){
+        for i in "${!CVT_input_aud[@]}"; do
+            if [[ "$1" == "${CVT_input_aud[$i]}" ]] ||
+               [[ "$1" == "${CVT_input_long_aud[$i]}" ]] ||
+               [[ "$1" == "${CVT_input_alt_aud[$i]}" ]]; then
+            echo $i
+            fi
+        done
+    }
+    function CVT_inv_input_vid(){
+        for i in "${!CVT_input_vid[@]}"; do
+            if [[ "$1" == "${CVT_input_vid[$i]}" ]] ||
+               [[ "$1" == "${CVT_input_long_vid[$i]}" ]] ||
+               [[ "$1" == "${CVT_input_alt_vid[$i]}" ]]; then
+            echo $i
+            fi
+        done
+    }
+   
 # OUTPUTS
 ## declaring
-    declare -a output_txt
-    declare -a output_img
-    declare -a output_aud
-    declare -a output_vid
+    declare -a CVT_output_txt
+    declare -a CVT_output_img
+    declare -a CVT_output_aud
+    declare -a CVT_output_vid
 
 ## text
-    output_txt[0]="-pdf"
-    output_txt[1]="-tex"
-    output_txt[2]="-beamer"
-    output_txt[3]="-html"
+    CVT_output_txt[0]="-pdf"
+    CVT_output_txt[1]="-tex"
+    CVT_output_txt[2]="-beamer"
+    CVT_output_txt[3]="-html"
+    CVT_output_txt[4]="-docx"
+
 ## image
-    output_img[0]="-jpeg"
-    output_img[1]="-jpg"
-    output_img[2]="-png"
-    output_img[3]="-svg"
+    CVT_output_img[0]="-jpeg"
+    CVT_output_img[1]="-jpg"
+    CVT_output_img[2]="-png"
+    CVT_output_img[3]="-svg"
 ## audio
-    output_aud[0]="-ogg"
-    output_aud[1]="-mp3"
+    CVT_output_aud[0]="-ogg"
+    CVT_output_aud[1]="-mp3"
 ## video
-    output_vid[0]="-gif"
-    output_vid[1]="-mp4"
+    CVT_output_vid[0]="-gif"
+    CVT_output_vid[1]="-mp4"
 
 # LONG OUTPUTS
 ## declaring
-    declare -a output_long_txt
-    declare -a output_long_img
-    declare -a output_long_aud
-    declare -a output_long_vid
+    declare -a CVT_output_long_txt
+    declare -a CVT_output_long_img
+    declare -a CVT_output_long_aud
+    declare -a CVT_output_long_vid
 ## text
-    output_long_txt[0]="--pdf"
-    output_long_txt[1]="--latex"
-    output_long_txt[2]="--beamer"
-    output_long_txt[3]="--html"
+    CVT_output_long_txt[0]="--pdf"
+    CVT_output_long_txt[1]="--latex"
+    CVT_output_long_txt[2]="--beamer"
+    CVT_output_long_txt[3]="--html"
+    CVT_output_long_txt[4]="--docx"
+
 ## image
-    output_long_img[0]="--jpeg"
-    output_long_img[1]="--jpg"
-    output_long_img[2]="--png"
-    output_long_img[3]="--svg"
+    CVT_output_long_img[0]="--jpeg"
+    CVT_output_long_img[1]="--jpg"
+    CVT_output_long_img[2]="--png"
+    CVT_output_long_img[3]="--svg"
 ## audio
-    output_long_aud[0]="--ogg"
-    output_long_aud[1]="--mp3"
+    CVT_output_long_aud[0]="--ogg"
+    CVT_output_long_aud[1]="--mp3"
 ## video
-    output_long_vid[0]="--gif"
-    output_long_vid[1]="--mp4"
+    CVT_output_long_vid[0]="--gif"
+    CVT_output_long_vid[1]="--mp4"
 
 # ALTERNATIVE OUTPUTS
 ## declaring
-    declare -a output_alt_txt
-    declare -a output_alt_img
-    declare -a output_alt_aud
-    declare -a output_alt_vid
+    declare -a CVT_output_alt_txt
+    declare -a CVT_output_alt_img
+    declare -a CVT_output_alt_aud
+    declare -a CVT_output_alt_vid
 ## text
-    output_alt_txt[0]="--pdf"
-    output_alt_txt[1]="-latex"
-    output_alt_txt[2]="--beamer"
-    output_alt_txt[3]="--html"
+    CVT_output_alt_txt[0]="--pdf"
+    CVT_output_alt_txt[1]="-latex"
+    CVT_output_alt_txt[2]="--beamer"
+    CVT_output_alt_txt[3]="--html"
+    CVT_output_alt_txt[4]="--docx"
 ## image
-    output_alt_img[0]="--jpeg"
-    output_alt_img[1]="--jpg"
-    output_alt_img[2]="--png"
-    output_alt_img[3]="--svg"
+    CVT_output_alt_img[0]="--jpeg"
+    CVT_output_alt_img[1]="--jpg"
+    CVT_output_alt_img[2]="--png"
+    CVT_output_alt_img[3]="--svg"
 ## audio
-    output_alt_aud[0]="--ogg"
-    output_alt_aud[1]="--mp3"
+    CVT_output_alt_aud[0]="--ogg"
+    CVT_output_alt_aud[1]="--mp3"
 ## video
-    output_alt_vid[0]="--gif"
-    output_alt_vid[1]="--mp4"
+    CVT_output_alt_vid[0]="--gif"
+    CVT_output_alt_vid[1]="--mp4"
 
 # INVERSE OUTPUTS
-## declaring
-    declare -A inv_output_txt
-    declare -A inv_output_img
-    declare -A inv_output_aud
-    declare -A inv_output_vid
-## inverses
-    for i in ${!output_txt[@]}; do
-        inv_output_txt[${output_txt[$i]}]=$i
-        inv_output_txt[${output_long_txt[$i]}]=$i
-        inv_output_txt[${output_alt_txt[$i]}]=$i
-    done
-    for i in ${!output_img[@]}; do
-        inv_output_img[${output_img[$i]}]=$i
-        inv_output_img[${output_long_img[$i]}]=$i
-        inv_output_img[${output_alt_img[$i]}]=$i
-    done
-    for i in ${!output_aud[@]}; do
-        inv_output_aud[${output_aud[$i]}]=$i
-        inv_output_aud[${output_long_aud[$i]}]=$i
-        inv_output_aud[${output_alt_aud[$i]}]=$i
-    done
-    for i in ${!output_vid[@]}; do
-        inv_output_vid[${output_vid[$i]}]=$i
-        inv_output_vid[${output_long_vid[$i]}]=$i
-        inv_output_vid[${output_alt_vid[$i]}]=$i
-    done
+    function CVT_inv_output_txt(){
+        for i in "${!CVT_output_txt[@]}"; do
+            if [[ "$1" == "${CVT_output_txt[$i]}" ]] ||
+               [[ "$1" == "${CVT_output_long_txt[$i]}" ]] ||
+               [[ "$1" == "${CVT_output_alt_txt[$i]}" ]]; then
+            echo $i
+            fi
+        done
+    }
+    function CVT_inv_output_img(){
+        for i in "${!CVT_output_img[@]}"; do
+            if [[ "$1" == "${CVT_output_img[$i]}" ]] ||
+               [[ "$1" == "${CVT_output_long_img[$i]}" ]] ||
+               [[ "$1" == "${CVT_output_alt_img[$i]}" ]]; then
+            echo $i
+            fi
+        done
+    }
+    function CVT_inv_output_aud(){
+        for i in "${!CVT_output_aud[@]}"; do
+            if [[ "$1" == "${CVT_output_aud[$i]}" ]] ||
+               [[ "$1" == "${CVT_output_long_aud[$i]}" ]] ||
+               [[ "$1" == "${CVT_output_alt_aud[$i]}" ]]; then
+            echo $i
+            fi
+        done
+    }
+    function CVT_inv_output_vid(){
+        for i in "${!CVT_output_vid[@]}"; do
+            if [[ "$1" == "${CVT_output_vid[$i]}" ]] ||
+               [[ "$1" == "${CVT_output_long_vid[$i]}" ]] ||
+               [[ "$1" == "${CVT_output_alt_vid[$i]}" ]]; then
+            echo $i
+            fi
+        done
+    }
 
