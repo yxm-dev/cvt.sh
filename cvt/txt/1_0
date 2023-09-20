@@ -1,0 +1,8 @@
+#! /bin/bash
+
+    function CVT_txt_1_0(){
+        name=${1%.*}
+        pandoc -f markdown -t pdf -V colorlinks=true ${CVT_pb_std[1,0]} ${CVT_tpl_std[1,0]} $2 $3 -o $name.pdf $1
+    }
+
+

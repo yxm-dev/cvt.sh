@@ -1,0 +1,6 @@
+#! /bin/bash
+
+    function CVT_txt_0_4(){
+        name=${1%.*}
+        pandoc -f markdown -t docx ${CVT_pb_std[0,4]} ${CVT_tpl_std[0,4]} $2 $3 -o $name.docx $1
+    }

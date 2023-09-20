@@ -1,0 +1,7 @@
+#! /bin/bash 
+
+    function CVT_img_0_2(){
+        name=$(basename "$1" .jpeg)
+        convert $1 $name.png
+        rm $1
+    }

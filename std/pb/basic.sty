@@ -1,0 +1,90 @@
+% STRUCTURE
+%% Title Page
+\usepackage{titling}
+    \newcommand{\subtitle}[1]{%
+        \posttitle{%
+            \vskip2em
+            \par \end{center}
+        \begin{center}\large#1\end{center}
+        \vskip 5em}%
+    }
+%% Header and Footer
+%\usepackage{fancyhdr}
+%    \pagestyle{fancy}
+%    \fancyhf[rh]{}% right header
+%    \fancyhf[lh]{}% left header
+%    \fancyhf[ch]{}% centre header
+%    \renewcommand\headrulewidth{0.5pt}
+\usepackage[margin=80pt]{geometry}
+%% Table of Contents
+\setcounter{tocdepth}{3}
+%% References
+%\usepackage[backend=biber]{biblatex}
+
+% TEXT
+%% Font
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+%% Symbols
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{tipa} %for \esh
+%% Diagrams
+\usepackage{tikz-cd}
+    \tikzset{%
+        symbol/.style={%
+            draw=none,
+            every to/.append style={%
+                edge node={node [sloped, allow upside down, auto=false]{$#1$}}}
+                    }
+            }
+    \usetikzlibrary{babel}
+\usepackage{$HOME/files/config/tex/quiver}
+%% Figures
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs, float, epsfig, epstopdf}
+%% Hyperlinks
+\usepackage{hyperref}
+        \hypersetup{
+        colorlinks=true,
+        linkcolor=blue,
+        filecolor=blue,      
+        urlcolor=blue,
+        citecolor=blue,
+        linktocpage=true,
+        pdfauthor=author,}
+%% Quotation
+\usepackage{csquotes}
+%% Boxes
+\usepackage{tcolorbox}
+%% Environments
+\usepackage{amsthm}
+        \newtheorem{theorem}{Theorem}[section]
+        \newtheorem{acknowledgement}[theorem]{Acknowledgment}
+        \newtheorem{algorithm}[theorem]{Algorithm}
+        \newtheorem{axiom}[theorem]{Axiom}
+        \newtheorem{case}[theorem]{Case}
+        \newtheorem{claim}[theorem]{Claim}
+        \newtheorem{conclusion}[theorem]{Conclusion}
+        \newtheorem{conjecture}[theorem]{Conjecture}
+        \newtheorem{corollary}[theorem]{Corollary}
+        \newtheorem{lemma}[theorem]{Lemma}
+        \newtheorem{problem}[theorem]{Problem}
+        \newtheorem{proposition}[theorem]{Proposition}
+        \newtheorem{definition}[theorem]{Definition}
+        \newtheorem{notation}[theorem]{Notation}
+        \newtheorem{example}[theorem]{Example}
+        \newtheorem{remark}[theorem]{Remark}
+        \newtheorem{exercise}[theorem]{Exercise}
+%% Spacing
+%\usepackage{indentfirst} 
+%\usepackage{parskip}
+%    \setlength{\parindent}{15pt}
+%\usepackage[letterspace=120]{microtype}
+
+% CUSTOM
+%% New Commands
+\usepackage{$HOME/files/config/tex/commands}

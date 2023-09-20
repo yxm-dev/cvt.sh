@@ -1,0 +1,6 @@
+#! /bin/bash
+
+    function CVT_txt_0_1(){
+        name=${1%.*}
+        pandoc -f markdown -t tex ${CVT_pb_std[0,1]} ${CVT_tpl_std[0,1]} $2 $3 -o $name.tex $1
+    }

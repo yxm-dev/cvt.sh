@@ -1,0 +1,8 @@
+#! /bin/bash 
+
+    function CVT_img_0_1(){
+        name=$(basename "$1" .jpeg)
+        underscore=$(echo "${name// /_}")
+        convert $1 $underscore.jpg
+        rm $1
+    }

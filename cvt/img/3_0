@@ -1,0 +1,7 @@
+#! /bin/bash 
+
+    function CVT_img_3_0(){
+        name=$(basename $1)
+        convert $1 $name.jpeg
+        rm $1
+    }

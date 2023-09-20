@@ -1,0 +1,7 @@
+#! /bin/bash 
+
+    function CVT_img_1_3(){
+        name=$(basename $1)
+        convert $1 $name.svg
+        rm $1
+    }
