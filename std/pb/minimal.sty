@@ -8,10 +8,7 @@
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsfonts}
-%\renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
 \usepackage[T1]{fontenc}
-
-%\renewcommand*\familydefault{\ttdefault}
 
 %% Symbols
 \usepackage{amsmath}
@@ -34,3 +31,11 @@
 %% Horizontal Line
 \let\OldRule\rule
 \renewcommand{\rule}[2]{\OldRule{\linewidth}{#2}}
+
+%% Box
+\usepackage{tcolorbox}
+
+% COMMANDS
+%% ignore @tex
+\newcommand{\.tex}{}
+

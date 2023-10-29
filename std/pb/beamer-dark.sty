@@ -12,15 +12,17 @@
 \setbeamertemplate{itemize subitem}{\scriptsize\text{>}}
 \setbeamertemplate{itemize subsubitem}{\scriptsize\text{>}}
 
-% % define "topic" environment
-% \newcommand{\topic}[1]{
-%         \vspace{1cm}
-%         \begin{center}
-%         \begin{huge}
-%             #1
-%         \end{huge}
-%         \end{center}
-%     }
+% define "topic" environment
+\newenvironment{topic}
+    {
+        \vspace{1cm}
+        \begin{center}
+        \begin{huge}
+    }
+    {
+    \end{huge}
+    \end{center}
+    }
 
 % Diagrams
 %% automatically add ampersand replacement option.
@@ -41,6 +43,3 @@
 % other packages
 \usepackage{tcolorbox}
 
-% COMMANDS
-%% ignore @tex
-\newcommand{\hltex}{}
